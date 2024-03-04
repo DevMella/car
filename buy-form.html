@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mella motodeal</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/93483deb2b.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="purchase.css">
+</head>
+<body>
+
+
+
+    <div class="all">
+        <div class="fir">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#"><img src="image/mella-logo-zip-file (3)/png/logo-no-background.png" alt=""></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link "  href="index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="About.html">About Us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="product.html">Products</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex align-items-center gap-5" role="search">
+                      <li class="nav-item">
+                        <a class="nav-link text-white ref" href="services.html">Services</a>
+                      </li>
+                      <button class="button ">Signup</button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+            <main>
+                <div class="row">
+                    <div class="col col-lg-7 col-12 now ">
+                        <div id="carDetails"></div>
+                    </div>
+            
+                    <div class="col col-lg-5 col-12 mind">
+                        <form id="buyForm" onsubmit="submitBuyForm(); return false;">
+                            <label for="licensePlate">LICENSE PLATE NUMBER</label>
+                            <input type="text" id="licensePlate" required><br>
+                
+                            <label for="vin">VEHICLE VERIFICATION NUMBER</label>
+                            <input type="text" id="vin" required><br>
+
+                            <label for="">VEHICLE REPORT HISTORY</label>
+                            <input type="text">
+
+                            <label for="identity" class="mb-1">VEHICLE OWNERSHIP PLAN</label> <br>
+                            <select id="identity" >
+                            <option value="default"  selected disabled></option>
+                            <option value="passport">Personal Use</option>
+                            <option value="driverLicense">Family Use</option>
+                            <option value="nin">Business Purpose</option>
+                        </select>
+                
+                            <button type="submit" class="button bat">Complete Purchase</button>
+                        </form>
+                
+                        <div id="buyAppreciationMessage" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const selectedCar = JSON.parse(localStorage.getItem('selectedCar'));
+
+        const carDetailsContainer = document.getElementById('carDetails');
+        carDetailsContainer.innerHTML = `<p>Car Name: ${selectedCar.name}</p>
+        <p>Price: $${selectedCar.price.toLocaleString()}</p>
+                                        <p>Build Year: ${selectedCar.year}</p>
+        <img src="${selectedCar.image}" alt="${selectedCar.name} Image"><br>
+                                        `;
+
+        function submitBuyForm() {
+            const appreciationMessage = document.getElementById('buyAppreciationMessage');
+            appreciationMessage.innerHTML = `<div class="cir"><i class="fa-solid fa-check"></i></div>
+            <span>Thank you for purchasing ${selectedCar.name} !</span><br>
+                                            You have successfully bought ${selectedCar.name} for $${selectedCar.price.toLocaleString()}.`;
+            document.getElementById('buyForm').style.display = 'none';
+            appreciationMessage.style.display = 'block';
+        }
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+

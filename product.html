@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mella motodeal</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/93483deb2b.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link>
+    <link rel="stylesheet" href="pro.css">
+</head>
+<body>
+
+    <div class="all">
+        <div class="fir">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#"><img src="image/mella-logo-zip-file (3)/png/logo-no-background.png" alt=""></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link "  href="index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="About.html">About Us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="product.html">Products</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex align-items-center gap-5" role="search">
+                      <li class="nav-item">
+                        <a class="nav-link text-white ref" href="services.html">Services</a>
+                      </li>
+                      <button class="button "><a href="signup.html">Signup</a></button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+        
+            <main>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <aside> 
+                    <h4 class="mb-4">Filter by</h4>
+                    <label for="price" class="mb-4">Price Range:</label>
+                    <select id="price" onchange="updateCarGrid()">
+                        <option value="default"  selected disabled></option>
+                        <option value="">All</option>
+                        <option value="$0-$25,000">$0-$25,000</option>
+                        <option value="$25,001-$50,000">$25,001-$50,000</option>
+                        <option value="$50,001-$70,000">$50,001-$70,000</option>
+                        <option value="$71,001-$90,000">$71,001-$90,000</option>
+                    </select> <br>
+        
+                    <label for="build-year" class="mb-4">Build Year:</label>
+                    <select id="build-year" onchange="updateCarGrid()">
+                        <option value="default"  selected disabled></option>
+                        <option value="">All</option>
+                        <option value="1999-2005">1999-2005</option>
+                        <option value="2006 -2010">2006-2010</option>
+                        <option value="2010-2020">2010-2020</option>
+                        <option value="2020-Till date">2020-Till date</option>
+                    </select> <br>
+        
+                    <label for="body-type" class="mb-4">Body Type:</label>
+                    <select id="body-type" onchange="updateCarGrid()">
+                        
+                        <option value="">All</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="SUV">SUV</option>
+                    </select> <br>
+        
+                    <label for="seating-capacity">Seating Capacity:</label>
+                    <select id="seating-capacity" onchange="updateCarGrid()">
+                        
+                        <option value="">All</option>
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </aside>
+                </div>
+          
+                  <div class="col col-lg-9">
+                    <section class="side">
+                      <div class="rent-box-container">
+                          <div class="swiper-container" id="rent-swiper">
+                              <div class="swiper-wrapper" id="rent-box-container"></div>
+                          </div>
+                          <span class="forward-icon" onclick="initializeSwiper()">➡</span>
+                      </div>
+          
+                      <div class="car-grid" id="car-grid">
+                          <div class="car-box" data-name="Car 1" data-price="$30,000" data-year="2000">
+                              <img src="image/7b4a7573bed6695114c4f72c7b5f94b5-removebg-preview (1).png" alt="Car 1 Image">
+                              <h3>Car 1</h3>
+                              <p>Price: $30,000</p>
+                              <p>Build Year: 2000</p>
+                              <button onclick="buyCar('Car 1')">Buy</button>
+                              <button onclick="rentCar('Car 1', 30000)">Rent</button>
+                          </div>
+          
+          
+                      </div>
+                  </section>
+                  </div>
+              </div>
+                
+            </main>
+
+
+            <footer>
+                <div class="row">
+                  <div class="col col-lg-3 g-4 col-12 mb-3">
+                    <div>
+                      <img src="image/mella-logo-zip-file (3)/png/logo-no-background.png" alt="">
+                      <h6 class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. molestias aperiam beatae?</h6>
+                    </div>
+                  </div>
+                  <div class="col col-lg-3 cal col-12 mb-4">
+                    <h5>Contact Info</h5>
+                    <div class="d-flex  gap-3 lok mb-3">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <h6>No, 12 Koloko Stret Near Nigerian Brewerry</h6>
+                    </div>
+            
+                    <div class="d-flex  gap-3 lok mb-3">
+                      <i class="fa-solid fa-phone"></i>
+                      <h6>+1234567890678</h6>
+                    </div>
+            
+                    <div class="d-flex  gap-3 lok">
+                      <i class="fa-solid fa-envelope"></i>
+                      <h6>oyegbemilelatifat@gmail.com</h6>
+                    </div>
+                  </div>
+                  <div class="col col-lg-3 cal col-12 mb-4 you">
+                    <h5>Information Links</h5>
+                    <div class="d-flex align-items-center  gap-2 lok ">
+                      <span>></span>
+                      <h6>Book Now</h6>
+                    </div>
+                    <div class="d-flex align-items-center  gap-2 lok ">
+                      <span>></span>
+                      <h6>Our Location</h6>
+                    </div>
+                    <div class="d-flex align-items-center  gap-2 lok ">
+                      <span>></span>
+                      <h6>Terms and Conditions</h6>
+                    </div>
+                    <div class="d-flex align-items-center  gap-2 lok ">
+                      <span>></span>
+                      <h6>Book Now</h6>
+                    </div>
+            
+            
+                  </div>
+                  <div class="col col-lg-3 cal">
+                    <h5>Subscribe to our Newsletter</h5>
+                    <form action="" class="mt-2">
+                      <input type="email" placeholder="Email Address">
+                      <button>Subscribe</button>
+                    </form>
+                  <div class="mt-3 d-flex justify-content-between">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                  </div>
+                  </div>
+                </div>
+              </footer>
+        </div>
+        <img src="" alt="">
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const carsData = [
+            { name: "Volvo_380", price: 30000, year: 2000, bodyType: "Sedan", seatingCapacity: 4, image: "image/7b4a7573bed6695114c4f72c7b5f94b5-removebg-preview (1).png" },
+            { name: "Range Rover Evoque", price: 10000, year: 2000, bodyType: "Sedan", seatingCapacity: 4, image: "image/0d29ef845e1bcf3ac63699cfe7839fac-removebg-preview.png"},
+            { name: "Toyota Corola", price: 20000, year: 2005, bodyType: "camry", seatingCapacity: 5,image: "image/5f1dcff8ed2e59e3e8fb3a567d5f8521-removebg-preview.png"},
+            { name: "Toyota Crown", price: 40000, year: 2015, bodyType: "SUV", seatingCapacity: 5,image: "image/download__3_-removebg-preview (2).png" },
+            { name: "Volvo Max_380", price: 50000, year: 2008, bodyType: "SUV", seatingCapacity: 5,image: "image/2018_Mazda6_Signature_Overview__Affordable_Luxury-removebg-preview2.png"  },
+            { name: "Mesh Volvo_350", price: 100000, year: 2018, bodyType: "SUV", seatingCapacity: 5,image: "image/357615b2a81c467b8e7762ad38888aca-removebg-preview.png" },
+            { name: "Camry Lee_360", price: 20000, year: 2018, bodyType: "SUV", seatingCapacity: 5 ,image: "image/7b4a7573bed6695114c4f72c7b5f94b5-removebg-preview (1).png"},
+            { name: "Benz 50", price: 30000, year: 2018, bodyType: "SUV", seatingCapacity: 5 ,image: "image/c61db08235cb3fe65c911281c9ccb369-removebg-preview.png"},
+            { name: "Benz 50", price: 60000, year: 2018, bodyType: "SUV", seatingCapacity: 5 ,image: "image/Range_Rover_Evoque-removebg-preview.png"},
+        ];
+
+        const rentedCars = [];
+
+        
+        function updateCarGrid() {
+            const priceFilter = document.getElementById("price").value;
+            const yearFilter = document.getElementById("build-year").value;
+            const bodyTypeFilter = document.getElementById("body-type").value;
+            const seatingCapacityFilter = document.getElementById("seating-capacity").value;
+
+            const filteredCars = carsData.filter(car => {
+                const carPrice = car.price;
+                const carYear = car.year;
+
+                const [minPrice, maxPrice] = priceFilter.split("-").map(str => parseInt(str.replace(/\$|,/g, ''), 10));
+                const [minYear, maxYear] = yearFilter.split("-").map(str => parseInt(str, 10));
+
+                return (
+                    (!minPrice || carPrice >= minPrice) &&
+                    (!maxPrice || carPrice <= maxPrice) &&
+                    (!minYear || carYear >= minYear) &&
+                    (!maxYear || carYear <= maxYear) &&
+                    (!bodyTypeFilter || car.bodyType === bodyTypeFilter) &&
+                    (!seatingCapacityFilter || car.seatingCapacity == seatingCapacityFilter)
+                );
+            });
+
+            const carGrid = document.getElementById("car-grid");
+            carGrid.innerHTML = "";
+
+            filteredCars.forEach(car => {
+                const carBox = document.createElement("div");
+                carBox.className = "car-box";
+                carBox.setAttribute("data-name", car.name);
+                carBox.innerHTML = `<img src="${car.image}" alt="Car Image">
+                                    <h5>${car.name}</h5>
+                                    <p>Price: $${car.price.toLocaleString()}</p>
+                                    <p>Build Year: ${car.year}</p>
+                                    <button class="ala button" onclick="buyCar('${car.name}')">Buy</button>
+                                    <button class="ele " onclick="rentCar('${car.name}', ${car.price})">Rent</button>`;
+
+                carGrid.appendChild(carBox);
+            });
+        }
+
+        function buyCar(carName) {
+            alert("You clicked Buy for " + carName);
+        }
+
+        function rentCar(carName, carPrice) {
+            if (rentedCars.includes(carName)) {
+                alert("You have already rented " + carName);
+                return;
+            }
+            rentedCars.push(carName);
+
+
+            const rentBoxContainer = document.getElementById("rent-box-container");
+            const rentedCarBox = document.createElement("div");
+            rentedCarBox.className = "rent-box swiper-slide";
+            rentedCarBox.setAttribute("data-name", carName);
+            rentedCarBox.innerHTML = `<h5>${carName}</h5>
+                        <p>Price: $${carPrice.toLocaleString()}</p>
+                        <p>Date: ${getCurrentDate()}</p>
+                        <button class="button bat" onclick="showForm('${carName}', ${carPrice})">Proceed</button>`;
+
+                                    
+            rentBoxContainer.appendChild(rentedCarBox);
+
+
+            initializeSwiper();
+        }
+    
+function showForm(carName, carPrice) {
+    const selectedCar = carsData.find(car => car.name === carName);
+    localStorage.setItem('selectedCar', JSON.stringify(selectedCar));
+    window.open('purchase-form.html', '_blank');
+}
+
+function buyCar(carName, carPrice) {
+    // Find the selected car from the carsData array
+    const selectedCar = carsData.find(car => car.name === carName);
+
+    // Store the selected car details in localStorage
+    localStorage.setItem('selectedCar', JSON.stringify(selectedCar));
+
+    // Open the new page with the buy form
+    window.open('buy-form.html', '_blank');
+}
+
+
+        function initializeSwiper() {
+            const swiper = new Swiper('#rent-swiper', {
+                slidesPerView: 'auto',
+                spaceBetween: 10,
+            });
+        }
+
+        function getCurrentDate() {
+            const currentDate = new Date();
+            const year = currentDate.getFullYear();
+            const month = ('0' + (currentDate.getMonth() + 1)).slice(-2);
+            const day = ('0' + currentDate.getDate()).slice(-2);
+            return year + "-" + month + "-" + day;
+        }
+
+        updateCarGrid();
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
